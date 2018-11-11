@@ -7,6 +7,22 @@
     tools:layout_editor_absoluteY="25dp">
 
     <Button
+        android:id="@+id/highScores3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="Spilhistorik"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/galge_imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/playagain_button"
+        app:layout_constraintTop_toBottomOf="@+id/lose_textView"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <Button
         android:id="@+id/playagain_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,9 +35,10 @@
         android:text="Play Again!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lose_textView"
-        app:layout_constraintVertical_bias="0.002" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/lose_textView"

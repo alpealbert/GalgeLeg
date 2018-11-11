@@ -82,7 +82,7 @@
         android:id="@+id/HighScores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HighScores"
+        android:text="Spilhistorik"
         app:layout_constraintBottom_toTopOf="@+id/galge_imageView"
         app:layout_constraintEnd_toStartOf="@+id/galge_imageView"
         app:layout_constraintHorizontal_bias="0.0"
