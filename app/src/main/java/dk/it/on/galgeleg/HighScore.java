@@ -125,7 +125,7 @@ public class HighScore extends AppCompatActivity {
 
 
 
-        scroller.addView(cv);
+        scroller.addView(cv, 0);
     }
 
     public String ReadGameHistory() throws IOException {
