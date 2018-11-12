@@ -46,12 +46,14 @@ public class MainActivity extends AppCompatActivity {
     //Initialize access to visual components
     EditText guess;
     TextView secret_word;
+    TextView wrong_guesses_TextView;
 
     //Logical components
     List<Integer> guessed_letters = new ArrayList<Integer>();
     String hemmeligeOrd = "";
     Integer letters_left;
     Integer number_of_mistakes = 0;
+    List<String> wrong_guesses = new ArrayList<>();
 
     //Network variables
     private RequestQueue myRequestQueue;
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         //Initialize access to visual components
         guess = (EditText)findViewById(R.id.guess_editText);
         secret_word = (TextView)findViewById(R.id.secret_word_textView);
+        wrong_guesses_TextView = (TextView)findViewById(R.id.wrong_guesses) ;
         guess_button = (Button)findViewById(R.id.guess_button);
         HighScores = (Button)findViewById(R.id.HighScores);
 
@@ -110,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 String input = guess.getText().toString().toLowerCase();
 
+                //If Letter has been guessed before
+                if(wrong_guesses.contains(input)){
+                    return;
+                }
                 //If no input
                 if(input.length() == 0) return;
 
@@ -145,7 +152,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //If incorrect letter guess
                     else {
-                       update_number_of_attempts();
+                        wrong_guesses.add(input);
+                        update_number_of_attempts();
                     }
                 }
                 //If input of entire word
@@ -154,6 +162,17 @@ public class MainActivity extends AppCompatActivity {
                     else update_number_of_attempts();
                 }
 
+                String wrongString;
+                if(wrong_guesses.size() != 0){
+                    wrongString = "Forkerte gæt: ";
+                    for(int i = 0; i < wrong_guesses.size(); i++){
+                        wrongString = wrongString + wrong_guesses.get(i);
+                        if(i != wrong_guesses.size()-1){
+                            wrongString = wrongString + ", ";
+                        }
+                    }
+                    wrong_guesses_TextView.setText(wrongString);
+                }
             }
         });
 
