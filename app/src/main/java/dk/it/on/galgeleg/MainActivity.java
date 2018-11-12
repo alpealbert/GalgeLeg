@@ -220,8 +220,8 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     *
-    * Jeg ved godt det er en meget "rodet" måde at få et "tilfældigt ord på. Planen var at bruge et offentligt "Random word generator" REST-API. Jeg har bestilt en gratis
-    * access-key, som man bruger til authroization af sit kald, men den tager op til 7 dage at få tilsendt, og jeg venter stadig på den. Jeg håber på at have modtaget
+    * Jeg ved godt det er en meget "rodet" måde at få et "tilfældigt" ord på. Planen var at bruge et offentligt "Random word generator" REST-API. Jeg har bestilt en gratis
+    * access-key, som man bruger til authorization af sit kald, men den tager op til 7 dage at få tilsendt, og jeg venter stadig på den. Jeg håber på at have modtaget
     * nøglen inden endelige version af projektet afleveres.
     *
     * */
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     },
                     new Response.ErrorListener() {
-                        //If call is not successful
+                        //If call is not successful select from offline word-list
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             System.out.println("Error");
